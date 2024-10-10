@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-1: #000814;
+  --color-2: #001d3d;
+  --color-3: #003566;
+  --color-4: #ffc300;
+  --color-5: #ffd60a;
+}
+
+@layer base {
+  html {
+    font-family: 'Sen', sans-serif;
+  }
+
+  body {
+    @apply bg-white text-[color:var(--color-1)] transition-colors duration-300;
+  }
+
+  .dark body {
+    @apply bg-[#141414] text-white;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[1860px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .content {
+    @apply max-w-[1800px] mx-auto;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floating {
+  animation: float 5s ease-in-out infinite;
+}
